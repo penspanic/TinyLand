@@ -8,7 +8,7 @@ public class MouseInput : MonoBehaviour
     void Awake()
     {
         playerMgr = GameObject.FindObjectOfType<PlayerManager>();
-        cam = GameObject.FindObjectOfType<Camera>();
+        cam = GameObject.Find("Player Camera").GetComponent<Camera>();
     }
 
     void Update()

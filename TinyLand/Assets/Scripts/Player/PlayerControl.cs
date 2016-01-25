@@ -24,7 +24,7 @@ public class PlayerControl : MonoBehaviour
         playerMgr = GameObject.FindObjectOfType<PlayerManager>();
         player = GetComponent<Player>();
         rgdBdy = GetComponent<Rigidbody>();
-        cam = GameObject.FindObjectOfType<Camera>();
+        cam = GameObject.Find("Player Camera").GetComponent<Camera>();
     }
 
     void Update()
