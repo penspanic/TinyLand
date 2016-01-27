@@ -23,9 +23,12 @@ public class MouseInput : MonoBehaviour
             {
                 if (hit.collider.gameObject != null)
                 {
-                    Player player = GameUtil.GetTopLevelParent(hit.collider.gameObject).GetComponent<Player>();
-                    if (player != null)
-                        playerMgr.PlayerClicked(player);
+                    GameObject obj = GameUtil.GetTopLevelParent(hit.collider.gameObject);
+
+                    if (obj.GetComponent<Player>() != null)
+                        playerMgr.PlayerClicked(obj.GetComponent<Player>());
+                    else if (obj.GetComponent<Car>() != null)
+                        playerMgr.CarClicked(obj.GetComponent<Car>());
                 }
             }
         }

@@ -33,6 +33,8 @@ public class PlayerControl : MonoBehaviour
             return;
         if (playerMgr.currPlayer != player)
             return;
+        if (player.isDriving)
+            return;
 
         Vector3 localRotation = cam.transform.localRotation.eulerAngles;
 
@@ -73,6 +75,8 @@ public class PlayerControl : MonoBehaviour
         if (!canControl)
             return;
         if (playerMgr.currPlayer != player)
+            return;
+        if (player.isDriving)
             return;
 
         if (Input.GetKey(KeyCode.W))
